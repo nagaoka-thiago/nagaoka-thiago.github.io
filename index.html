@@ -1,104 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="about_me">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>about_me</title>
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago Nagaoka's Resume</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    var serviceWorkerVersion = '198031165';
-    var scriptLoaded = false;
-    function loadMainDartJs() {
-      if (scriptLoaded) {
-        return;
-      }
-      scriptLoaded = true;
-      var scriptTag = document.createElement('script');
-      scriptTag.src = 'main.dart.js';
-      scriptTag.type = 'application/javascript';
-      document.body.append(scriptTag);
-    }
-
-    if ('serviceWorker' in navigator) {
-      // Service workers are supported. Use them.
-      window.addEventListener('load', function () {
-        // Wait for registration to finish before dropping the <script> tag.
-        // Otherwise, the browser will load the script multiple times,
-        // potentially different versions.
-        var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
-        navigator.serviceWorker.register(serviceWorkerUrl)
-          .then((reg) => {
-            function waitForActivation(serviceWorker) {
-              serviceWorker.addEventListener('statechange', () => {
-                if (serviceWorker.state == 'activated') {
-                  console.log('Installed new service worker.');
-                  loadMainDartJs();
-                }
-              });
-            }
-            if (!reg.active && (reg.installing || reg.waiting)) {
-              // No active web worker and we have installed or are installing
-              // one for the first time. Simply wait for it to activate.
-              waitForActivation(reg.installing || reg.waiting);
-            } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
-              // When the app updates the serviceWorkerVersion changes, so we
-              // need to ask the service worker to update.
-              console.log('New service worker available.');
-              reg.update();
-              waitForActivation(reg.installing);
-            } else {
-              // Existing service worker is still good.
-              console.log('Loading app from service worker.');
-              loadMainDartJs();
-            }
-          });
-
-        // If service worker doesn't succeed in a reasonable amount of time,
-        // fallback to plaint <script> tag.
-        setTimeout(() => {
-          if (!scriptLoaded) {
-            console.warn(
-              'Failed to load app from service worker. Falling back to plain <script> tag.',
-            );
-            loadMainDartJs();
-          }
-        }, 4000);
-      });
-    } else {
-      // Service workers not supported. Just drop the <script> tag.
-      loadMainDartJs();
-    }
-  </script>
+    <div class="content">
+        <div class="head-container">
+            <div class="head-title">
+                <h1>Thiago Nagaoka - Flutter Developer</h1>
+            </div>
+            <div class="head-information">
+                <a href="mailto:nagaoka.thiago@bol.com.br">nagaoka.thiago@bol.com.br</a>
+                <a href="https://github.com/nagaoka-thiago/">My Github</a>
+            </div>
+        </div>
+        <div class="experiences">
+            <h2>Experiences</h2>
+            <div class="experience-item">
+                <div class="experience-title">
+                    <h3>Snowman Labs - Flutter Developer - July 2022 - Now</h3>
+                    <i class="material-icons">expand_more</i>
+                </div>
+                <div class="experience-details">
+                    <p>Snowman Labs develops apps for various industries, such as: banking, environment regulatory, fitness, etc</p>
+                    <h2>Projects</h2>
+                    <div class="projects">
+                        No projects available.
+                    </div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-title">
+                    <h3>Snowman Labs - Snow Academy - March 2022 - July 2022</h3>
+                    <i class="material-icons">expand_more</i>
+                </div>
+                <div class="experience-details">
+                    <p>Snow Academy is a Dart/Flutter training course for beginners. Its learning process is based on building your own projects.</p>
+                    <h2>Projects</h2>
+                    <div class="projects">
+                        <a href="https://github.com/wilsleygermano/ConvidaAI"><img src="assets/images/convidaai.png" width="250" height="400"></a>
+                        <a href="https://github.com/nagaoka-thiago/quiz_snowman_app"><img src="assets/images/quiz.png" width="250" height="400"></a>
+                        <a href="https://github.com/EmmanuelPereira1/convert_coin"><img src="assets/images/convert.png" width="250" height="400"></a>
+                        <a href="https://github.com/Victoriurki/dictionary_app"><img src="assets/images/dictionary.png" width="250" height="400"></a>
+                        <a href="https://github.com/nagaoka-thiago/age_of_empires_info"><img src="assets/images/age.png" width="250" height="400"></a>
+                        <a href="https://github.com/nagaoka-thiago/pool-tracking-app"><img src="assets/images/pool.png" width="300" height="400"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-title">
+                    <h3>Softpar Tecnologia - Java Intern Developer - March 2018 - August 2018</h3>
+                    <i class="material-icons">expand_more</i>
+                </div>
+                <div class="experience-details">
+                    <p>Softpar used to develop softwares for financial and banking companies. It was bought by Sinqia in 2019.</p>
+                    <p>I was a member of the migrating team. We migrated systems developed in Delphi to Java.</p>
+                    <h2>Projects</h2>
+                    <div class="projects">
+                        No projects available.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-title">
+                    <h3>Universidade Tecnológica Federal do Paraná - Specialization in Java - February 2022 - July 2023</h3>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-title">
+                    <h3>Universidade Tecnológica Federal do Paraná - Computer Engineering - July 2013 - Decembre 2019</h3>
+                    <i class="material-icons">expand_more</i>
+                </div>
+                <div class="education-details">
+                    <a href="assets/pdfs/Meu_TCC_Final.pdf"><img src="assets/images/utfpr_1.jpg" width="250" height="400"></a>
+                    <a href="http://paginapessoal.utfpr.edu.br/gustavobborba/if66j-s71-projetos/files/IF66J-17a_RT_EnvironmentBox.pdf"><img src="assets/images/utfpr_2.png" width="600" height="400"></a>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-title">
+                    <h3>Pontifícia Universidade Católica do Paraná - Computer Science - February 2010 - July 2013</h3>
+                    <i class="material-icons">expand_more</i>
+                </div>
+                <div class="education-details">
+                    <h3>Interrupted.</h3>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-title">
+                    <h3>Colégio SPEI Jovem - Technical High School - February 2007 - Decembre 2010</h3>
+                </div>
+            </div>
+        </div>
+        <div class="tech-skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>Dart</li>
+                <li>Flutter</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
